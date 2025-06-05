@@ -27,7 +27,7 @@ if t.TYPE_CHECKING:
 @set_catalog(override_mapping={"_get_data_objects": CatalogSupport.REQUIRES_SET_CATALOG})
 class DuckDBEngineAdapter(LogicalMergeMixin, GetCurrentCatalogFromFunctionMixin, RowDiffMixin):
     DIALECT = "duckdb"
-    SUPPORTS_TRANSACTIONS = False
+    SUPPORTS_TRANSACTIONS = True
     SCHEMA_DIFFER = SchemaDiffer(
         parameterized_type_defaults={
             exp.DataType.build("DECIMAL", dialect=DIALECT).this: [(18, 3), (0,)],
