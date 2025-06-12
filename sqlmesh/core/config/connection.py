@@ -276,7 +276,7 @@ class BaseDuckDBConnectionConfig(ConnectionConfig):
     connector_config: t.Dict[str, t.Any] = {}
     secrets: t.List[t.Dict[str, t.Any]] = []
 
-    concurrent_tasks: int = 4
+    concurrent_tasks: int = 1
     register_comments: bool = True
     pre_ping: t.Literal[False] = False
 
